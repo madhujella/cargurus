@@ -11,7 +11,6 @@
     height: 70px;
     max-height: 70px;
     box-shadow: 0 0px 6px $lightGrey;
-    margin: 0;
     .logo {
       display: inline-block;
       width: 150px;
