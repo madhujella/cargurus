@@ -2,6 +2,7 @@
   import { ASSETS_PATHS } from "../../../utils/constants";
   import Internalization from "../../Shared/Internalization/Internalization.svelte";
   import UserSettings from "./UserSettings/UserSettings.svelte";
+  import Notifications from "./Notifications/Notifications.svelte";
 </script>
 
 <style type="text/scss" global>
@@ -117,11 +118,7 @@
   <div class="col-md-3 col-lg-3 col-sm-2">
     <div class="row end-md end-sm end-lg">
       <div class="user-nav">
-        <div class="nav-section">
-          <div
-            class="nav-icon"
-            style="background-image: url({ASSETS_PATHS.notifyIcon})" />
-        </div>
+        <Notifications />
         <div class="nav-section">
           <div
             class="nav-icon"

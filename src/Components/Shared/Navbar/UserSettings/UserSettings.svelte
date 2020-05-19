@@ -18,17 +18,6 @@
       display: block;
       padding: 10px;
       border-bottom: 1px dotted $lightGrey;
-      &:before {
-        content: " ";
-        display: inline-block;
-        position: absolute;
-        top: -10px;
-        text-align: center;
-        right: calc(100% - 102%);
-        border-bottom: 10px solid $white;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-      }
     }
   }
 </style>
