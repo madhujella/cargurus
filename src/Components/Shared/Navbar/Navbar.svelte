@@ -1,8 +1,7 @@
 <script>
-  import { ASSETS_PATHS } from "../../../utils/constants";
+  import { USER_SETTINGS, ASSETS_PATHS } from "../../../utils/constants";
   import Internalization from "../../Shared/Internalization/Internalization.svelte";
-  import UserSettings from "./UserSettings/UserSettings.svelte";
-  import Notifications from "./Notifications/Notifications.svelte";
+  import Dropdown from "./Dropdown/Dropdown.svelte";
 </script>
 
 <style type="text/scss" global>
@@ -34,6 +33,7 @@
         cursor: pointer;
         display: inline-block;
         border-radius: $globalBorderRadius;
+        position: relative;
         padding: 8px;
         margin: 4px;
         width: 80px;
@@ -50,17 +50,6 @@
     }
     .user-nav {
       margin-right: 10px;
-      .nav-section {
-        border-radius: 50%;
-        background-color: $lightGrey;
-        padding: 10px;
-        width: 25px;
-        height: 25px;
-        margin: 12px 5px 0 0;
-        .nav-icon {
-          width: 20px;
-        }
-      }
     }
   }
 </style>
@@ -118,13 +107,9 @@
   <div class="col-md-3 col-lg-3 col-sm-2">
     <div class="row end-md end-sm end-lg">
       <div class="user-nav">
-        <Notifications />
-        <div class="nav-section">
-          <div
-            class="nav-icon"
-            style="background-image: url({ASSETS_PATHS.userIcon})" />
-        </div>
-        <UserSettings />
+        <Dropdown navIcon={ASSETS_PATHS.notifyIcon} />
+        <Dropdown navIcon={ASSETS_PATHS.userIcon} />
+        <Dropdown list={USER_SETTINGS} navIcon={ASSETS_PATHS.caretDownIcon} />
       </div>
     </div>
   </div>
