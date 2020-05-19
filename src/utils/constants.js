@@ -10,7 +10,12 @@ export const ASSETS_PATHS = {
     sellIcon: `${assetsURI}/sell.svg`,
     notifyIcon: `${assetsURI}/bell.svg`,
     userIcon: `${assetsURI}/user.svg`,
-    caretDownIcon: `${assetsURI}/caret-down.svg`
+    caretDownIcon: `${assetsURI}/caret-down.svg`,
+    flagIcon: {
+        us: `${assetsURI}/flags/us.svg`,
+        uk: `${assetsURI}/flags/uk.svg`,
+        ca: `${assetsURI}/flags/ca.svg`,
+    },
 }
 
 export const DEALTYPES = ['used', 'new', 'certified pre-owned', 'sale by owner']
@@ -52,11 +57,11 @@ export const POP_BRANDS = [
 ]
 
 export const LANGUAGES = [
-    { label: 'United States (EN)', value: 'us-en' },
-    { label: 'Estados Unidos (ES)', value: 'es' },
-    { label: 'Canada (EN)', value: 'ca-en' },
-    { label: 'Canada (FR)', value: 'ca-fr' },
-    { label: 'United Kindom', value: 'uk-en' },
+    { label: 'United States (EN)', value: 'us-en', icon: ASSETS_PATHS.flagIcon.us },
+    { label: 'Estados Unidos (ES)', value: 'es', icon: ASSETS_PATHS.flagIcon.us },
+    { label: 'Canada (EN)', value: 'ca-en', icon: ASSETS_PATHS.flagIcon.ca },
+    { label: 'Canada (FR)', value: 'ca-fr', icon: ASSETS_PATHS.flagIcon.ca },
+    { label: 'United Kindom', value: 'uk-en', icon: ASSETS_PATHS.flagIcon.uk },
 ]
 
 

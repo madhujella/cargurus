@@ -21,6 +21,7 @@
   @import "../../../styles/variables.scss";
   .select {
     &-option {
+      width: max-content;
       font-size: $fontSizeSM;
       &-selected {
         display: inline-block;
@@ -32,36 +33,51 @@
           width: 8px;
           height: 8px;
         }
+        &.active {
+          border: 1px solid $secondaryColor;
+          box-shadow: 0 0 2px $secondaryColor;
+        }
       }
       .select-option-container {
         position: relative;
         background-color: $white;
-        margin-top: 15px;
-        padding: 0 5px;
+        margin-top: 5px;
+        padding: 5px;
         border-radius: $globalBorderRadius;
         box-shadow: 0 0 20px $lightGrey;
         .option {
+          cursor: pointer;
           padding: 5px;
           border-bottom: 1px dotted $lightGrey;
+          border-radius: $globalBorderRadius;
+          &:hover {
+            background-color: $lightGrey;
+          }
         }
-        &:before {
-          content: " ";
-          display: inline-block;
-          position: absolute;
-          top: -10px;
-          text-align: center;
-          right: calc(100% - 55%);
-          border-bottom: 10px solid $white;
-          border-right: 10px solid transparent;
-          border-left: 10px solid transparent;
-        }
+      }
+      .option-icon {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        display: inline-block;
+        padding: 11px;
+        margin-bottom: -6px;
+        margin-right: 5px;
       }
     }
   }
 </style>
 
 <div class="select-option">
-  <span class="select-option-selected" on:click={toggleDropdown}>
+  <span
+    class="select-option-selected"
+    on:click={toggleDropdown}
+    class:active={showDropdown}>
+    {#if defaultValue.icon}
+      <span
+        class="option-icon"
+        style="background-image: url({defaultValue.icon})" />
+    {/if}
     {defaultValue.label}
     {#if caretDown}
       <span class="caret-down">
@@ -77,6 +93,11 @@
           class:active={defaultValue.value !== opt.value}
           value={opt.value}
           on:click={() => onSelect(opt.value)}>
+          {#if opt.icon}
+            <span
+              class="option-icon"
+              style="background-image: url({opt.icon})" />
+          {/if}
           {opt.label}
         </li>
       {/each}
