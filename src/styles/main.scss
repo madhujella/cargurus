@@ -20,3 +20,28 @@ a {
     text-decoration: none;
     color: $primaryFontColor;
 }
+
+.row {
+    margin: 0;
+}
+.form {
+    &-control {
+        border: 1px solid $lightGrey;
+        padding: 10px;
+        font-size: $fontSizeSM;
+        border-radius: $globalBorderRadius;
+        outline: 0;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        &:focus {
+            border: 1px solid $secondaryColor;
+            box-shadow: 0 0 2px $secondaryColor;
+        }
+    }
+    &-label {
+        display: inline-block;
+    }
+}

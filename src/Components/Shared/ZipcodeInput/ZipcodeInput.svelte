@@ -6,6 +6,7 @@
 
 </style>
 
-<div class="form-input zipcode">
-  <input type="number" class="form-control" bind:value={zipCode} />
+<div class="form-group">
+  <label class="form-label" for="zipcode">Zipcode</label>
+  <input type="number" id="zipcode" class="form-control" bind:value={zipCode} />
 </div>
